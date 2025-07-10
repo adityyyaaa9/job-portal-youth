@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Submissions Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background: #f9f9f9;
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 30px;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ccc;
+            text-align: left;
+            font-size: 14px;
+        }
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f1f1f1;
+        }
+        .container {
+            max-width: 1000px;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Submitted Applications</h2>
+        <table>
+            <tr>
+                <th>Timestamp</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Education</th>
+                <th>Skills</th>
+                <th>Job Preference</th>
+            </tr>
+            {% for row in records %}
+            <tr>
+                <td>{{ row['Timestamp'] }}</td>
+                <td>{{ row['Name'] }}</td>
+                <td>{{ row['Age'] }}</td>
+                <td>{{ row['Education'] }}</td>
+                <td>{{ row['Skills'] }}</td>
+                <td>{{ row['Job Preference'] }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</body>
+</html>
