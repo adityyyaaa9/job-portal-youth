@@ -10,7 +10,7 @@ app = Flask(__name__)
 scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
 creds = ServiceAccountCredentials.from_json_keyfile_name("credentials.json", scope)
 client = gspread.authorize(creds)
-sheet = client.open_by_url("https://docs.google.com/spreadsheets/d/YOUR_SHEET_ID_HERE").sheet1
+sheet = client.open_by_url("https://docs.google.com/spreadsheets/d/1pODaqxaibp_WEek6iVBUNbIR3T5uJ9GyiBLAzmS2-nM/edit?gid=0#gid=0").sheet1
 
 @app.route('/')
 def home():
