@@ -34,6 +34,11 @@ def apply():
 @app.route('/thankyou')
 def thankyou():
     return "<h2>Thank you for applying! ✅</h2><p>We have received your submission.</p>"
+    
+@app.route('/dashboard')
+def dashboard():
+    records = sheet.get_all_records()
+    return render_template('dashboard.html', records=records)
 
 if __name__ == '__main__':
     app.run(debug=True)
