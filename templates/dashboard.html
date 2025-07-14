@@ -40,23 +40,31 @@
     <div class="container">
         <h2>Submitted Applications</h2>
         <table>
-            <tr>
-                <th>Timestamp</th>
-                <th>Name</th>
-                <th>Age</th>
-                <th>Education</th>
-                <th>Skills</th>
-                <th>Job Preference</th>
-            </tr>
+           <tr>
+    <th>Timestamp</th>
+    <th>Name</th>
+    <th>Age</th>
+    <th>Education</th>
+    <th>Skills</th>
+    <th>Job Preference</th>
+    <th>Address</th>
+    <th>State</th>
+    <th>Phone</th>
+</tr>
+
             {% for row in records %}
             <tr>
-                <td>{{ row['Timestamp'] }}</td>
-                <td>{{ row['Name'] }}</td>
-                <td>{{ row['Age'] }}</td>
-                <td>{{ row['Education'] }}</td>
-                <td>{{ row['Skills'] }}</td>
-                <td>{{ row['Job Preference'] }}</td>
-            </tr>
+    <td>{{ row['Timestamp'] }}</td>
+    <td>{{ row['Name'] }}</td>
+    <td>{{ row['Age'] }}</td>
+    <td>{{ row['Education'] }}</td>
+    <td>{{ row['Skills'] }}</td>
+    <td>{{ row['Job Preference'] }}</td>
+    <td>{{ row['Address'] }}</td>
+    <td>{{ row['State'] }}</td>
+    <td>{{ row['Phone'] }}</td>
+</tr>
+
             {% endfor %}
         </table>
     </div>
