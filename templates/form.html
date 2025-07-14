@@ -1,72 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Job Portal For Youth Empowerment</title>
-  <style>
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      background: #f4f7f8;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-      margin: 0;
-    }
-    .form-container {
-      background: white;
-      padding: 30px;
-      border-radius: 10px;
-      box-shadow: 0 0 15px rgba(0,0,0,0.1);
-      width: 100%;
-      max-width: 400px;
-    }
-    .form-container h2 {
-      text-align: center;
-      margin-bottom: 20px;
-      color: #333;
-    }
-    input[type="text"], input[type="number"] {
-      width: 100%;
-      padding: 10px;
-      margin: 8px 0 16px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      box-sizing: border-box;
-    }
-    input[type="submit"] {
-      width: 100%;
-      padding: 12px;
-      background-color: #4CAF50;
-      color: white;
-      font-size: 16px;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-    input[type="submit"]:hover {
-      background-color: #45a049;
-    }
-    .logo {
-      display: block;
-      margin: 0 auto 20px;
-      width: 60px;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <title>Dashboard | Job Portal</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f0f2f5;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #343a40;
+            padding: 20px;
+            text-align: center;
+            color: white;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 26px;
+        }
+
+        .container {
+            padding: 30px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        thead {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        th, td {
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            font-size: 14px;
+            text-align: left;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+
+        footer {
+            background-color: #343a40;
+            text-align: center;
+            color: white;
+            padding: 10px 0;
+            margin-top: 40px;
+        }
+
+        @media screen and (max-width: 768px) {
+            th, td {
+                font-size: 12px;
+                padding: 8px;
+            }
+        }
+    </style>
 </head>
 <body>
-  <div class="form-container">
-    <img src="https://cdn-icons-png.flaticon.com/512/6840/6840478.png" alt="Logo" class="logo" />
-    <h2>Apply for a Job</h2>
-    <form method="POST">
-      <input type="text" name="name" placeholder="Your Name" required />
-      <input type="number" name="age" placeholder="Your Age" required />
-      <input type="text" name="education" placeholder="Education Level" required />
-      <input type="text" name="skills" placeholder="Your Skills (e.g., tailoring, electrician)" required />
-      <input type="text" name="job" placeholder="Preferred Job Type" required />
-      <input type="submit" value="Submit Application" />
-    </form>
-  </div>
+    <header>
+        <h1>Dashboard - Submitted Applications</h1>
+    </header>
+
+    <div class="container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Timestamp</th>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Education</th>
+                    <th>Skills</th>
+                    <th>Job Preference</th>
+                    <th>Address</th>
+                    <th>State</th>
+                    <th>Phone</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in records %}
+                <tr>
+                    <td>{{ row['Timestamp'] }}</td>
+                    <td>{{ row['Name'] }}</td>
+                    <td>{{ row['Age'] }}</td>
+                    <td>{{ row['Education'] }}</td>
+                    <td>{{ row['Skills'] }}</td>
+                    <td>{{ row['Job Preference'] }}</td>
+                    <td>{{ row['Address'] }}</td>
+                    <td>{{ row['State'] }}</td>
+                    <td>{{ row['Phone'] }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <footer>
+        &copy; 2025 Job Portal for Youth Empowerment
+    </footer>
 </body>
 </html>
