@@ -1,23 +1,66 @@
-
 <!DOCTYPE html>
 <html>
 <head>
     <title>Job Application Portal</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+            padding: 40px;
+        }
+
+        form {
+            background: white;
+            padding: 25px;
+            max-width: 500px;
+            margin: auto;
+            box-shadow: 0 0 10px #ccc;
+            border-radius: 8px;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        input[type="tel"] {
+            width: 100%;
+            padding: 8px;
+            margin: 8px 0 15px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        h2 {
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
+
     <h2>Job Application Form</h2>
+
     <form method="POST">
-        Name: <input type="text" name="name" required><br><br>
-        Age: <input type="number" name="age" required><br><br>
-        Education: <input type="text" name="education" required><br><br>
-        Skills: <input type="text" name="skills" required><br><br>
-       Job Preference: <input type="text" name="job" required><br><br>
-Address: <input type="text" name="address" required><br><br>
-State: <input type="text" name="state" required><br><br>
-Phone Number: <input type="tel" name="phone" required><br><br>
-
-<input type="submit" value="Submit">
-
+        Name: <input type="text" name="name" required><br>
+        Age: <input type="number" name="age" required><br>
+        Education: <input type="text" name="education" required><br>
+        Skills: <input type="text" name="skills" required><br>
+        Job Preference: <input type="text" name="job" required><br>
+        Address: <input type="text" name="address" required><br>
+        State: <input type="text" name="state" required><br>
+        Phone Number: <input type="tel" name="phone" required><br>
+        <input type="submit" value="Submit">
     </form>
+
 </body>
 </html>
