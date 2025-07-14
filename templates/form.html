@@ -1,118 +1,67 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Dashboard | Job Portal</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <title>Job Application Form</title>
     <style>
         body {
-            font-family: 'Roboto', sans-serif;
-            background-color: #f0f2f5;
-            margin: 0;
-            padding: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+            padding: 40px;
         }
 
-        header {
-            background-color: #343a40;
-            padding: 20px;
-            text-align: center;
-            color: white;
-        }
-
-        h1 {
-            margin: 0;
-            font-size: 26px;
-        }
-
-        .container {
-            padding: 30px;
-            max-width: 1200px;
+        form {
+            background: white;
+            padding: 25px;
+            max-width: 500px;
             margin: auto;
+            box-shadow: 0 0 10px #ccc;
+            border-radius: 8px;
         }
 
-        table {
+        input[type="text"],
+        input[type="number"],
+        input[type="tel"] {
             width: 100%;
-            border-collapse: collapse;
-            background-color: white;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 8px;
+            margin: 8px 0 15px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
         }
 
-        thead {
+        input[type="submit"] {
             background-color: #4CAF50;
             color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
         }
 
-        th, td {
-            padding: 12px 15px;
-            border: 1px solid #ddd;
-            font-size: 14px;
-            text-align: left;
+        input[type="submit"]:hover {
+            background-color: #45a049;
         }
 
-        tr:nth-child(even) {
-            background-color: #f9f9f9;
-        }
-
-        tr:hover {
-            background-color: #f1f1f1;
-        }
-
-        footer {
-            background-color: #343a40;
+        h2 {
             text-align: center;
-            color: white;
-            padding: 10px 0;
-            margin-top: 40px;
-        }
-
-        @media screen and (max-width: 768px) {
-            th, td {
-                font-size: 12px;
-                padding: 8px;
-            }
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Dashboard - Submitted Applications</h1>
-    </header>
 
-    <div class="container">
-        <table>
-            <thead>
-                <tr>
-                    <th>Timestamp</th>
-                    <th>Name</th>
-                    <th>Age</th>
-                    <th>Education</th>
-                    <th>Skills</th>
-                    <th>Job Preference</th>
-                    <th>Address</th>
-                    <th>State</th>
-                    <th>Phone</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for row in records %}
-                <tr>
-                    <td>{{ row['Timestamp'] }}</td>
-                    <td>{{ row['Name'] }}</td>
-                    <td>{{ row['Age'] }}</td>
-                    <td>{{ row['Education'] }}</td>
-                    <td>{{ row['Skills'] }}</td>
-                    <td>{{ row['Job Preference'] }}</td>
-                    <td>{{ row['Address'] }}</td>
-                    <td>{{ row['State'] }}</td>
-                    <td>{{ row['Phone'] }}</td>
-                </tr>
-                {% endfor %}
-            </tbody>
-        </table>
-    </div>
+    <h2>Job Application Form</h2>
 
-    <footer>
-        &copy; 2025 Job Portal for Youth Empowerment
-    </footer>
+    <form method="POST">
+        Name: <input type="text" name="name" required><br>
+        Age: <input type="number" name="age" required><br>
+        Education: <input type="text" name="education" required><br>
+        Skills: <input type="text" name="skills" required><br>
+        Job Preference: <input type="text" name="job" required><br>
+        Address: <input type="text" name="address" required><br>
+        State: <input type="text" name="state" required><br>
+        Phone Number: <input type="tel" name="phone" required><br>
+        <input type="submit" value="Submit">
+    </form>
+
 </body>
 </html>
+
