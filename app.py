@@ -20,13 +20,21 @@ def home():
 @app.route('/apply', methods=['GET', 'POST'])
 def apply():
     if request.method == 'POST':
-        name = request.form['name']
-        age = request.form['age']
-        education = request.form['education']
-        skills = request.form['skills']
-        job = request.form['job']
+name = request.form['name']
+age = request.form['age']
+education = request.form['education']
+skills = request.form['skills']
+job = request.form['job']
+address = request.form['address']
+state = request.form['state']
+phone = request.form['phone']
 
-        row = [datetime.now().strftime("%Y-%m-%d %H:%M:%S"), name, age, education, skills, job]
+row = [
+    datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+    name, age, education, skills, job,
+    address, state, phone
+]
+
         sheet.append_row(row)
         return redirect('/thankyou')
     return render_template('form.html')
